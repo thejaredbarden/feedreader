@@ -1,13 +1,13 @@
-﻿@model System.ServiceModel.Syndication.SyndicationFeed
+﻿
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Feed Example</h2>
-
-<ul>
-    @foreach (var item in Model.Items)
-    {
-        <li>@item.Title.Text</li>
-    }
-</ul>
+<div>
+    <a href="#" id="NPR">NPR</a>
+    <a href="#" id="dZone">dZone</a>
+</div>
+<div id="feedItems">
+    
+</div>

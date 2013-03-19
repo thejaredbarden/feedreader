@@ -15,8 +15,21 @@ namespace FeedReader.Controllers
 
         public ActionResult Index()
         {
-            var feed = SyndicationFeed.Load(XmlReader.Create("http://feeds.dzone.com/dzone/frontpage"));
-            return View(feed);
+            return View();        
+        }
+
+        public ActionResult GetTitles(string source)
+        {
+            if (source.Equals("NPR", StringComparison.OrdinalIgnoreCase))
+            {
+                var feed = SyndicationFeed.Load(XmlReader.Create("http://www.npr.org/rss/rss.php?id=1001"));
+                return PartialView("~/Views/Feed/_FeedTitles.cshtml", feed);
+            }
+            else
+            {
+                var feed = SyndicationFeed.Load(XmlReader.Create("http://feeds.dzone.com/dzone/frontpage"));
+                return PartialView("~/Views/Feed/_FeedTitles.cshtml", feed);
+            }
         }
 
     }
