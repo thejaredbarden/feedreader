@@ -1,0 +1,13 @@
+﻿@model System.ServiceModel.Syndication.SyndicationFeed
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Feed Example</h2>
+
+<ul>
+    @foreach (var item in Model.Items)
+    {
+        <li>@item.Title.Text</li>
+    }
+</ul>
