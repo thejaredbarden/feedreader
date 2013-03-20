@@ -32,7 +32,7 @@ namespace FeedReader.Controllers
             }
         }
 
-        public ActionResult GetArticleContent()
+        public ActionResult GetArticleContent(string articleId)
         {
             var feed = SyndicationFeed.Load(XmlReader.Create("http://www.npr.org/rss/rss.php?id=1001"));
 

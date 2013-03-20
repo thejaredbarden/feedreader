@@ -1,11 +1,12 @@
 ﻿@model System.ServiceModel.Syndication.SyndicationFeed
 <ul>
-        @int loopCount = 0;
+        @{int loopCount = 0;
 
-        @foreach (var item in Model.Items)
+        foreach (var item in Model.Items)
         {
-            @loopCount++
+            loopCount++;
                       
-            <li id="">item.Title.Text</li>
+            @:<li><div id="article_@loopCount">@item.Title.Text</div></li>
         }
+}
 </ul>

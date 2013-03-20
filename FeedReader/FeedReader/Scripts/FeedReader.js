@@ -25,4 +25,20 @@
             }
         });
     });
+
+    $("#article_1").on("click", function () {
+        alert("click");
+        $.ajax({
+            url: "/Feed/GetArticleContent",
+            data: { articleId: $(this).attr("id") },
+            succes: function (view) {
+                $("#articlecontent").html(view);
+                $("#articlecontent").slideToggle(500);
+            },
+            error: function () {
+                $("#articlecontent").html("You done did broked it.");
+
+            }
+        });
+    });
 });
