@@ -170,6 +170,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ArticleModel.cs" />
+    <Compile Include="Models\FeedModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -286,6 +288,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Feed\Index.cshtml" />
     <Content Include="Views\Feed\_FeedTitles.cshtml" />
+    <Content Include="Views\Feed\_ArticleContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -32,5 +32,12 @@ namespace FeedReader.Controllers
             }
         }
 
+        public ActionResult GetArticleContent()
+        {
+            var feed = SyndicationFeed.Load(XmlReader.Create("http://www.npr.org/rss/rss.php?id=1001"));
+
+            return PartialView("~/Views/Feed/_ArticleContent.cshtml", feed.Items.First());
+        }
+
     }
 }
