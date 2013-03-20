@@ -1,5 +1,15 @@
 ﻿@model System.ServiceModel.Syndication.SyndicationItem
-
+@{
+    var content = "Nothing Here!";
+    var extension = Model.ElementExtensions;
+    foreach(var ext in extension)
+    {
+        if (ext.GetObject<System.Xml.Linq.XElement>().Name.LocalName == "encoded")
+        {
+            content = ext.GetObject<System.Xml.Linq.XElement>().Value;
+        }
+    }   
+}
 <div>
-    @Model.Content.ToString();
+    @content
 </div>

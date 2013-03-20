@@ -32,6 +32,8 @@
             url: "/Feed/GetArticleContent",
             data: { articleId: $(this).attr("id") },
             succes: function (view) {
+                alert("success!");
+                alert(view);
                 $("#articlecontent").html(view);
                 $("#articlecontent").slideToggle(500);
             },
