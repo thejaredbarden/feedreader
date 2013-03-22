@@ -6,10 +6,10 @@
     {
         if (ext.GetObject<System.Xml.Linq.XElement>().Name.LocalName == "encoded")
         {
-           content = ext.GetObject<System.Xml.Linq.XElement>().Value;
+            content = ext.GetObject<System.Xml.Linq.XElement>().Value;
         }
     }   
 }
 <div>
-    @Html.Raw(content)
+    @content
 </div>

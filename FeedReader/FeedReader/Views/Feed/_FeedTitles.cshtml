@@ -18,13 +18,13 @@
             url: "/Feed/GetArticleContent",
             data: { articleId: $(this).attr("id") },
             contentType: "application/json;",
-            success: function (view) {
+            succes: function (view) {
                 alert("success!");
-                $("#articleContent").html(view);
-                $("#articleContent").slideToggle(500);
+                $("#articlecontent").html(view.content);
+                $("#articlecontent").slideToggle(500);
             },
             error: function () {
-                $("#articleContent").html("You done did broked it.");
+                $("#articlecontent").html("You done did broked it.");
 
             },            
         });

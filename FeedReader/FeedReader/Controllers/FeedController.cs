@@ -36,6 +36,17 @@ namespace FeedReader.Controllers
         {
             var feed = SyndicationFeed.Load(XmlReader.Create("http://www.npr.org/rss/rss.php?id=1001"));
 
+            var content = "Nothing Here!";
+            var extension = feed.Items.FirstOrDefault().ElementExtensions;
+            foreach (var ext in extension)
+            {
+                if (ext.GetObject<System.Xml.Linq.XElement>().Name.LocalName == "encoded")
+                {
+                    content = ext.GetObject<System.Xml.Linq.XElement>().Value;
+                }
+            }
+            return Json(new { content = content }, JsonRequestBehavior.AllowGet);
+
             return PartialView("~/Views/Feed/_ArticleContent.cshtml", feed.Items.First());
         }
 
