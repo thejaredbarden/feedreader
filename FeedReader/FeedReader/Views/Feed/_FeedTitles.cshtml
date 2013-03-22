@@ -10,3 +10,23 @@
         }
 }
 </ul>
+
+<script>
+    $("#article_1").on("click", function () {
+        alert("click");
+        $.ajax({
+            url: "/Feed/GetArticleContent",
+            data: { articleId: $(this).attr("id") },
+            contentType: "application/json;",
+            success: function (view) {
+                alert("success!");
+                $("#articleContent").html(view);
+                $("#articleContent").slideToggle(500);
+            },
+            error: function () {
+                $("#articleContent").html("You done did broked it.");
+
+            },            
+        });
+    });
+</script>
